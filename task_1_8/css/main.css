@@ -1,0 +1,106 @@
+@charset utf8;
+/*代码参考bootstrap.css760行左右*/
+* {
+	margin: 0;
+	padding: 0;
+}
+.container {
+	width: 100%;
+}
+.container * {
+	box-sizing: border-box;
+}
+.content{
+	height: 50px;	
+	border: 1px solid #999;
+	background: #eee;
+}
+[class*= 'col-']{
+	/*height: 50px;这里不能设置高度，否则上下空间就显示不出来了*/
+	float: left;
+	padding: 20px 10px 0 10px; 
+}
+.row {
+	width: 100%;
+	padding:0 10px; 
+}
+
+/* normal */
+@media (min-width: 768px) {/*当屏幕最小是768px时*/
+	.col-md-1 {
+		width: 8.33333%;
+	}
+	.col-md-2 {
+		width: 16.66666%;
+	}
+	.col-md-3 {
+		width: 25%;
+	}
+	.col-md-4 {
+		width: 33.33333%;
+	}
+	.col-md-5 {
+		width: 41.66666%;
+	}
+	.col-md-6 {
+		width: 50%;
+	}
+	.col-md-7 {
+		width: 58.33333%;
+	}
+	.col-md-8 {
+		width: 66.66666%;
+	}
+	.col-md-9 {
+		width: 75%;
+	}
+	.col-md-10 {
+		width: 83.33333%;
+	}
+	.col-md-11 {
+		width: 91.66666%;
+	}
+	.col-md-12 {
+		width: 100%;
+	}
+}
+
+/* mobile */
+@media (max-width: 768px) {
+	.col-sm-1 {
+		width: 8.33333%;
+	}
+	.col-sm-2 {
+		width: 16.66666%;
+	}
+	.col-sm-3 {
+		width: 25%;
+	}
+	.col-sm-4 {
+		width: 33.33333%;
+	}
+	.col-sm-5 {
+		width: 41.66666%;
+	}
+	.col-sm-6 {
+		width: 50%;
+	}
+	.col-sm-7 {
+		width: 58.33333%;
+	}
+	.col-sm-8 {
+		width: 66.66666%;
+	}
+	.col-sm-9 {
+		width: 75%;
+	}
+	.col-sm-10 {
+		width: 83.33333%;
+	}
+	.col-sm-11 {
+		width: 91.66666%;
+	}
+	.col-sm-12 {
+		width: 100%;
+	}
+}
