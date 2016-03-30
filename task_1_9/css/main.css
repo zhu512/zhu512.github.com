@@ -401,8 +401,8 @@ a{text-decoration:none;}
 	background: #fff;
 	border-radius: 8px;
 }
-.cal{border-collapse: collapse;border-spacing: 0;text-align: center;margin: 0 auto;font-size: 10px;}
-caption{width:310px;height: 24px;margin-bottom:10px;margin-top: 10px; }
+.cal{width: 310px;margin: 0 auto;border-collapse: collapse;border-spacing: 0;text-align: center;margin: 0 auto;font-size: 10px;}
+caption{width:310px;height: 24px;margin: 0 auto;margin-bottom:10px;margin-top: 10px; }
 #year{width: 66px;background:url(../icons/row_5_down.png) no-repeat 51px center; }
 #moon{width: 85px;background:url(../icons/row_5_down.png) no-repeat 53px center;padding-left: 28px;}
 #data{width: 76px;height: 24px;background:url(../icons/row_5_down.png) no-repeat 63px center;}
@@ -414,8 +414,8 @@ caption{width:310px;height: 24px;margin-bottom:10px;margin-top: 10px; }
 	padding-bottom: 9px; /*  */
 	text-align: center;
 }
-.cal tbody {
-
+.cal tbody td{
+	height: 42px;
 }
 .cal tbody a{
 	display: block;
@@ -423,10 +423,6 @@ caption{width:310px;height: 24px;margin-bottom:10px;margin-top: 10px; }
 	margin: 1px 0;
   color:#323333;
 }
-/*.cal tbody td{
-	height: 42px;
-	width: 42px;
-}*/
 .cal tbody td:nth-child(6) a,.cal tbody td:nth-child(7) a{color:#c9161d;}
 .cal tbody td:nth-child(6) a p,.cal tbody td:nth-child(7) a p{color:#323333;}
 .cal tbody .selected a {
