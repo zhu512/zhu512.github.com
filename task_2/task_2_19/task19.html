@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task17</title>
+<style>
+#result{
+  width: 70%;
+  height: 310px;
+  border:3px solid #000;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin-top:20px; 
+}
+#result div {
+    width:10px;
+	  background-color: red;
+    margin: 2px;
+	  float: left;
+
+   }
+</style>
+</head>
+<body>
+	<input type="text" id="num">
+	<button id="left-in">左侧入</button>
+	<button id="right-in">右侧入</button>
+	<button id="left-out">左侧出</button>
+	<button id="right-out">右侧出</button>
+  <button id="sort">排序</button>
+	<div id="result"></div>
+	<script>
+  //获取元素id
+    var $ = function(id){
+      return "string" == typeof id?document.getElementById(id):id;
+    }    
+  //获取表单输入值   
+    var arr = [];
+    function getValue(e){      
+      var num =$("num").value;
+      var n = /^\d+$/;
+      if(arr.length< 60){
+        if(!n.test(num)){
+          alert("请输入数字");
+        }else if(num<10||num>100){
+          throw new Error("输入值越界");
+        }else{
+            if(e == $("right-in")){
+            arr.push(num);  
+            }else if(e == $("left-in")){
+             arr.unshift(num);
+            }
+        }
+      }else{     
+       alert("超出限制！！！");
+      }
+    }
+  //渲染页面
+    function renderDate(){
+      var list = '';
+      for(var i in arr){
+        list += '<div id="'+i+'" style="height:'+arr[i]*2+'px"></div>';
+      }
+      $('result').innerHTML = list;
+    }
+      //删除对应元素
+    function delDate(n){
+      delete arr[n];
+      renderDate();
+    }  
+  //冒泡排序
+    function bubbleSort(){
+      var length = arr.length;
+      for(var i = 0;i<length;i++){
+        for(var j =0;j<length-1-i;j++){
+          if(arr[j]>arr[j+1]){
+            var temp =arr[j];
+            arr[j] = arr[j+1];
+            arr[j+1] = temp;
+          }
+        }
+      }
+      renderDate();
+    }   
+  //点击事件
+    $("left-in").onclick = function(e){
+      getValue(e.target);
+      renderDate();
+    }
+    $("right-in").onclick = function(e){         
+      getValue(e.target);
+      renderDate();       
+    }
+     $("left-out").onclick = function(){
+       arr.shift();
+       renderDate();
+    }
+    $("right-out").onclick = function(){
+      arr.pop();
+      renderDate();
+    }
+    $("result").onclick = function(e){
+         delDate(e.target.id);
+    }
+     $("sort").onclick = function(e){
+         bubbleSort();
+    }
+  
+	</script>
+</body>
+</html>
