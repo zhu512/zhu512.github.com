@@ -23,7 +23,7 @@ window.onload = function(){
             	opic.className = 'pic';
             	oBox.appendChild(opic);
                 var oImag = document.createElement('img');
-                oImag.src ="image/"+dataInt.data[i].src;
+                oImag.src ="../image/"+dataInt.data[i].src;
                 opic.appendChild(oImag);
             } 
            waterfall('main','box');  
