@@ -1,0 +1,10 @@
+<svg width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+  <clipPath id="c1" clipPathUnits="objectBoundingBox">
+    <polygon points="0 0,0.67 0,0.33 1,0 1">
+    </polygon>
+  </clipPath>
+  <clipPath id="c2" clipPathUnits="objectBoundingBox">
+    <polygon points="0.67 0,1 0,1 1,0.33 1">
+    </polygon>
+  </clipPath>
+</svg>
