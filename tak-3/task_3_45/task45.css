@@ -1,0 +1,13 @@
+*{
+	margin:0;
+	padding:0;
+}
+#main{
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+}
+.box{
+    line-height: 0;
+	float: left;
+}
