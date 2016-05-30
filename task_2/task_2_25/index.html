@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task24</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+<fieldset>
+<legend>设置</legend>
+	<input type="text" id="searchIn">
+	<input type="button" value="搜索" class="btn">
+	<span>add files 右键单击  Double click can open or close folder </span>
+	<p>《双击打开或关闭文件 右键操作文件》</p>
+</fieldset>
+
+<ul id="tree">
+	<li id="root" >
+		<a href="#"><i class="icon-folder-open"></i>目录</a>
+		<ul>
+			<li> 
+				<a href="#"><i class="icon-folder-open"></i>电影</a>
+				<ul>
+					<li><a href="#"><i class="icon-file-empty"></i>灌篮高手</a></li>
+					<li><a href="#"><i class="icon-file-empty"></i>火影忍者</a></li>
+					<li>
+						<a href="#"><i class="icon-folder-open"></i>红楼梦</a>
+						<ul>
+							<li><a href="#"><i class="icon-file-empty"></i>红楼梦-1</a></li>
+							<li><a href="#"><i class="icon-file-empty"></i>红楼梦-2</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class="icon-folder-open"></i>课件</a>
+				<ul>
+					<li>
+						<a href="#"><i class="icon-folder-open"></i>大一课件</a>
+						<ul></ul>
+					</li>
+					<li>
+					    <a href="#"><i class="icon-folder-open"></i>大二课件</a>
+					    <ul></ul>
+					</li>					
+					<li>
+						<a href="#"><i class="icon-folder-open"></i>大三课件</a>
+						<ul>
+							<li><a href="#"><i class="icon-file-empty"></i>大三上学期</a></li>
+							<li><a href="#"><i class="icon-file-empty"></i>大三下学期</a></li>
+						</ul>
+					</li>
+					<li>
+					    <a href="#"><i class="icon-folder-open"></i>大四课件</a>
+					    <ul></ul>
+					</li>	
+				</ul>
+			</li>	
+			<li>
+				<a href="#"><i class="icon-folder-open"></i>编程语言</a>
+				<ul>
+					<li><a href="#"><i class="icon-file-empty"></i>C语言</a></li>
+					<li><a href="#"><i class="icon-file-empty"></i>Java</a></li>
+					<li><a href="#"><i class="icon-file-empty"></i>JavaScript</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>	
+<div id="tip">
+	<a href="#" id="folder"><i class="icon-plus"></i>新建文件夹</a>
+	<a href="#" id="file"><i class="icon-plus"></i>新建文档</a>
+	<a href="#" id="dele"><i class="icon-bin"></i>删除</a>
+</div>
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+@font-face {
+    font-family: 'icomoon';
+    src:    url('fonts/icomoon.eot?54gmjw');
+    src:    url('fonts/icomoon.eot?54gmjw#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?54gmjw') format('truetype'),
+        url('fonts/icomoon.woff?54gmjw') format('woff'),
+        url('fonts/icomoon.svg?54gmjw#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-file-empty:before {
+    content: "\e924";
+}
+.icon-folder:before {
+    content: "\e92f";
+}
+.icon-folder-open:before {
+    content: "\e930";
+}
+.icon-bin:before {
+    content: "\e9ac";
+}
+.icon-plus:before {
+    content: "\ea0a";
+}
+.icon-minus:before {
+    content: "\ea0b";
+}
+/* tip 样式设置*/
+#tip{
+    width: 120px;
+    border:2px solid #ccc;
+    position: absolute;
+    background-color: #fff;
+    z-index: 10001;
+    display: none;
+}
+#tip a{
+    color: #000;
+    display:block;
+    text-decoration: none;
+    padding: 8px 5px;
+ 
+}
+#tip a:hover,#tip a:focus{
+    background-color: #ccc;
+}
+/* fieldset 设置*/
+
+fieldset{
+    width: 400px;
+    border-radius: 5px;
+    margin-bottom: 38px;
+}
+/* fieldset 设置*/
+#tree{
+    width: 400px;
+    height: 550px;
+    border:2px solid #ccc;
+    overflow-y: auto;
+    
+}
+#tree li{
+    list-style: none;
+}
+#tree li a{
+    display:inline-block;
+    width: 200px;
+    height: 30px;
+    color: #000;
+    text-decoration: none;
+    line-height: 30px;
+    padding-left: 15px;
+}
+#tree li a:hover,
+#tree li a:focus{
+    background-color: #ccc;
+}
