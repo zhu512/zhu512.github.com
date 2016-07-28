@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task24</title>
+	<style>
+	div{
+		margin:10px 10px;
+		padding:10px;
+		border:1px solid #000;
+		display: -webkit-flex; /* Safari */
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
+		align-items:center;
+	}
+	.btn{
+		margin-top: 20px;
+	}
+	.active,.flag{
+		background-color: red;
+	}
+	.default{
+		background-color: white;
+	}
+	.select{
+		background-color: yellow;
+	}
+
+	</style>
+</head>
+<body>
+<input type="button" value="深度优先遍历" class="btn">
+<input type="button" value="广度优先遍历" class="btn">
+<input type="text" id="searchIn">
+<input type="button" value="深度搜索" class="btn">
+<input type="button" value="广度搜索" class="btn">
+<section>
+	<div id="root">
+		Super
+		<div>
+			Cat
+			<div>
+				Apple
+				<div>Pear</div>
+				<div>Pig</div>
+				<div>Cola</div>
+				<div>Soccer</div>
+			</div>
+			<div>Phone</div>
+			<div>
+				<div>Book</div>
+				<div>School</div>
+			</div>
+		</div>
+		<div>
+			Node
+			<div>
+				Human
+				<div>Code</div>
+				<div>Operate</div>
+				<div>Man</div>
+			</div>
+			<div>
+				Program
+				<div>
+					Bement
+					<div>Cat</div>
+				</div>
+				<div>Glass</div>
+			</div>
+		</div>
+	</div>	
+</section>
+<input type="button" value="删除节点" class="btn">
+<input type="text" id="textIn">
+<input type="button" value="增加节点" class="btn">
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>

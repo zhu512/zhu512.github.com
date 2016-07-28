@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task17</title>
+<style>
+#result div {
+	  margin: 5px;
+	  padding: 10px;
+	  background-color: red;
+	  float: left;
+   }
+</style>
+</head>
+<body>
+	<input type="text" id="num">
+	<button id="left-in">左侧入</button>
+	<button id="right-in">右侧入</button>
+	<button id="left-out">左侧出</button>
+	<button id="right-out">右侧出</button>
+	<div id="result"></div>
+	<script>
+  //获取元素id
+    var $ = function(id){
+      return "string" == typeof id?document.getElementById(id):id;
+    }    
+  //获取表单输入值   
+    var arr = [];
+    function getValue(e){      
+      var num =$("num").value;
+      var n = /^\d+$/;
+      if(!n.test(num)){
+        alert("请输入数字");
+      }else if(e == $("right-in")){
+          arr.push(num);	
+        }else if(e == $("left-in")){
+        arr.unshift(num);
+      }
+    }
+  //渲染页面
+    function renderDate(){
+      var list = '';
+      for(var i in arr){
+        list += '<div id="'+i+'">'+arr[i]+'</div>';
+      }
+      $('result').innerHTML = list;
+    }
+      //删除对应元素
+    function delDate(n){
+      delete arr[n];
+      renderDate();
+    }    
+  //点击事件
+    $("left-in").onclick = function(e){
+      getValue(e.target);
+      renderDate();
+    }
+    $("right-in").onclick = function(e){         
+      getValue(e.target);
+      renderDate();       
+    }
+     $("left-out").onclick = function(){
+       arr.shift();
+       renderDate();
+    }
+    $("right-out").onclick = function(){
+      arr.pop();
+      renderDate();
+    }
+    $("result").onclick = function(e){
+         delDate(e.target.id);
+    }
+   var str = $("text-in").value.trim();
+      var temp = str.slipt(/[^0-9a-zA-Z\u4e00-\u9fa5]+/).fliter(function(item,index,array){
+        if(item){
+          return true;
+        }else{
+          alert("输入有误！！");
+        }
+      });
+      arrDate.push(temp);
+	</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  padding:0;
+  font-family: Helvetica, Tahoma, Arial, STXihei, sans-serif;
+  font-size: 14px;
+}
+.gallery{
+	width:600px;
+	height:400px;
+	margin:0 auto;
+	position: relative;
+	overflow: hidden;
+}
+
+.box img{
+	width: 100%;
+	height: 100%;
+}
+/*一张图片*/
+.gallery-1 .box{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;/*替换内容的放置*/
+	object-position: center;
+}
+/*两张图片*/
+.gallery-2 .box:nth-child(1){
+	position: absolute;
+	left: 0;
+	clip-path:url('resourse.svg#c1');
+	-webkit-clip-path:polygon(0% 0%,66.7% 0%,33.3% 100%,0 100%);
+}
+.gallery-2 .box:nth-child(2){
+	position: absolute;
+	right: 0;
+	clip-path:url('resourse.svg#c2');
+	-webkit-clip-path:polygon(66.7% 0%,100% 0%,100% 100%,33.3% 100%);
+}
+/*三张图片*/
+.gallery-3 .box:nth-child(1){
+    float:left;
+    width:66.7%;
+    height: 100%;
+}
+.gallery-3 .box:nth-child(2){
+    float:left;
+    width:33.3%;
+    height: 50%;
+}
+.gallery-3 .box:nth-child(3){
+    float:left;
+    width:33.3%;
+    height: 50%;
+}
+/*四张图片*/
+.gallery-4 .box{
+    float:left;
+    width:50%;
+    height: 50%;
+}
+
+/*五张图片*/
+.gallery-5 .box:nth-child(1){
+	float:left;
+    width:66.7%;
+    height:66.7%;
+}
+.gallery-5 .box:nth-child(2){
+	float:right;
+    width: 33.3%;
+    height: 33.3%;
+}
+.gallery-5 .box:nth-child(3){
+	float:right;
+    width: 33.3%;
+    height:66.7%;
+}
+.gallery-5 .box:nth-child(4),
+.gallery-5 .box:nth-child(5){
+	float:left;
+    width:33.35%;
+    height:33.35%;
+}
+
+/*六张图片*/
+.gallery-6 .box:nth-child(1){
+    float:left ;
+    width:66.7%;
+    height: 66.7%;
+}
+.gallery-6 .box:nth-child(2),
+.gallery-6 .box:nth-child(3),
+.gallery-6 .box:nth-child(4){
+    float:right;
+    width:33.3%;
+    height: 33.3%;
+}
+.gallery-6 .box:nth-child(5),
+.gallery-6 .box:nth-child(6){
+	float:left;
+    width:33.35%;
+    height: 33.3%;
+}

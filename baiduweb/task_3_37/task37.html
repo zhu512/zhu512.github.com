@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task37</title>
+
+<style>
+#mask{	
+	background: #000;
+	position: fixed;
+	top:0;
+	right:0;
+	left: 0;
+	bottom: 0;
+	z-index: 10;
+	display:none;
+	outline:0; 
+	opacity: 0.5;
+	filter: alpha(opacity = 50);/*兼容ie*/	
+}
+.modal-dialog{
+	position:absolute;
+	left:50%;
+    -webkit-transform: translate(-50%,25%);
+        -ms-transform: translate(-50%,25%);
+            transform: translate(-50%,25%);
+    animation: move 1s ease-out;
+	width: 500px;
+	border: 1px solid #999;
+    border: 1px solid rgba(0, 0, 0,.2);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+            box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+    z-index: 1050;
+    background: #fff;
+    display: none;
+}
+@keyframes move{
+	0%{
+		top:0;
+    -webkit-transform: translate(-50%,-100%);
+        -ms-transform: translate(-50%,-100%);
+            transform: translate(-50%,-100%);
+    }
+  100%{
+    -webkit-transform: translate(-50%,25%);
+        -ms-transform: translate(-50%,25%);
+            transform: translate(-50%,25%);
+    }
+}
+.in{
+   
+}
+.header{
+	padding:15px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.content{
+    padding: 20px;
+}
+.footer{
+    padding: 19px 20px 20px;
+    margin-top: 15px;
+    text-align: right;
+    border-top: 1px solid #e5e5e5;
+}
+.btn{
+    cursor: pointer;
+    color: #fff;
+    background-color: #337ab7;
+    border-radius: 4px;
+    margin-left: 5px;
+    padding: 6px 12px;
+    border: 1px solid transparent;
+}
+</style>
+<script type="text/javascript">
+//为元素添加class
+
+window.onload= function(){
+	var oBtn = document.getElementById("click");
+	var oClose = document.getElementById("close");
+    var oModal = document.getElementById("modal");
+	var oMask = document.createElement('div');
+	    oMask.id= "mask";
+	    document.body.appendChild(oMask);
+	oBtn.onclick = function(){console.log(oBtn);
+        oMask.style.display = "block";
+        oModal.style.display = "block";
+    };
+    oClose.onclick = function(){
+        oMask.style.display = "none";
+        oModal.style.display = "none";
+    };	
+}	
+
+</script>
+</head>
+<body>
+<button class="btn" id="click">click me!</button>
+<div class="modal-dialog fade" id="modal">
+    <div class="header">
+    	<h4 class="modal_title">Modal</h4>
+    </div>
+    <div class="content">
+    	<p>你好！！！</p>
+    </div>
+    <div class="footer">
+    	<button class="btn" id="close">Close</button>
+    </div>
+</div>
+</body>
+</html>
