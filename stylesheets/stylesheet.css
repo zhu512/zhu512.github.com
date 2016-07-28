@@ -358,8 +358,22 @@ Full-Width Styles
   background: #f2f2f2;
   border-top: 1px solid #111;
   border-bottom: 1px solid #111;
+
 }
 
+/**a链接css**/
+#main_content_wrap a {
+  display: block;
+  text-decoration: none;
+  font-size: 18px;
+  margin-left:20px;
+}
+#main_content_wrap  .task {
+  margin-left:50px; 
+}
+#main_content_wrap  h1 {
+   font-size: 25px;
+}
 #main_content {
   padding-top: 40px;
 }
