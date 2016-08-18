@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>wujiao</title>
+</head>
+<body>
+<canvas id="canvas" >
+		当前浏览器不支持Canvas,请更换浏览器后再试
+</canvas>	
+<script>
+window.onload = function(){
+	var canvas = document.getElementById('canvas');
+	var context = canvas.getContext('2d');
+	canvas.width = 800;
+	canvas.height= 800;	
+	context.lineWidth = 10;
+
+	drawStar(context, 150,300,400,400,30);
+}
+function drawStar(cxt,r,R,x,y,rot){//x,y是五角星所在的坐标中心。。rot是要旋转的位置
+	cxt.beginPath();
+	for(var i = 0; i < 5; i++){
+        cxt.lineTo(Math.cos((18 + i*72 - rot)/180*Math.PI)*R + x,
+              -Math.sin((18+i*72 - rot)/180*Math.PI)*R+ x);//角度转弧度的过程
+		cxt.lineTo(Math.cos((54+i*72 - rot)/180*Math.PI)*r+ y,
+	          -Math.sin((54+i*72 - rot)/180*Math.PI)*r + y);
+
+	}	
+	cxt.closePath();
+	
+	cxt.stroke();
+}
+</script>
+</body>
+</html>

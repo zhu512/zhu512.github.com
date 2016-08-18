@@ -113,7 +113,7 @@ function generateNum(){
 			}
 		}
 	}*/
-
+	//spaceArr记录棋盘中空闲的位置
 	var count = 0;
 	var spaceArr = [];
 	for(var i = 0; i < 4; i++){
@@ -124,6 +124,7 @@ function generateNum(){
 			}
 		}
 	}console.log(count);
+	//在空闲的位置中随机挑选一个位置
 	var pos = parseInt(Math.floor(Math.random()* (count-1)));console.log(pos);
 	randx = parseInt(Math.floor(spaceArr[pos]/4));
 	randy = parseInt(Math.floor(spaceArr[pos]%4));
@@ -132,7 +133,7 @@ function generateNum(){
 	//随机一个数字
 	var randNum = Math.random() < 0.5 ? 2:4;
 
-	//随机位置显示随机数字
+	//随机位置显示随机数字	
 	board[randx][randy] = randNum;
 	showNum(randx,randy,randNum);
 
@@ -237,6 +238,7 @@ function gameover(){
 }
 
 function moveLeft(){
+	//这里相当于做的优化
 	if(!canMoveLeft( board ))
 		return false;
 

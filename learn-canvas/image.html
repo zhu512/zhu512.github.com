@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>image</title>
+</head>
+<body>
+<canvas id="canvas" style="display:block;margin: 0 auto; border:1px solid #aaa;">
+		当前浏览器不支持Canvas,请更换浏览器后再试
+</canvas>
+<input type="range" id="scale-range" min="0.5" max="3.0" step="0.01" value="1.0" style="display:block;margin:20px auto;width:500px">
+<canvas id="watermark-canvas" style="display:none;margin: 0 auto; border:1px solid #aaa;">
+		当前浏览器不支持Canvas,请更换浏览器后再试
+</canvas>
+<script>
+var canvas = document.getElementById('canvas');
+var context = canvas.getContext('2d');
+var slider = document.getElementById('scale-range')
+var image = new Image();
+
+var watermarkCanvas = document.getElementById('watermark-canvas');
+var watermarkContext = watermarkCanvas.getContext('2d');
+window.onload = function(){
+	
+	canvas.width = 500;
+	canvas.height= 500;	
+
+	var scale = slider.value;
+
+	image.src = '11.jpg';
+	image.onload = function(){
+		//context.drawImage(image,0,0,canvas.width,canvas.height);
+		drawImageByScale(scale);
+
+		slider.onmousemove = function(){
+			scale = slider.value;
+			drawImageByScale(scale);
+		}
+	}
+
+	//set up watermark canvas
+	watermarkCanvas.width = 200;
+	watermarkCanvas.height = 100;
+
+	watermarkContext.font = 'bold 50px Arial';
+	watermarkContext.fillStyle = 'rgba(255,255,255,0.5)';
+	watermarkContext.textBaseline = "middle";
+	watermarkContext.fillText("YMZ",20,50);
+}
+function drawImageByScale(scale){
+	var imageWidth = 500 * scale;
+	var imageHeith = 500 * scale;
+
+	// var sx = imageWidth/2 - canvas.width/2;
+	// var sy = imageHeith/2 - canvas.height/2;
+	// context.drawImage(image,sx,sy,canvas.width,canvas.height,0,0,canvas.width,canvas.height);
+	var dx = canvas.width/2 - imageWidth/2;
+	var dy = canvas.height/2 - imageHeith/2;
+
+	context.clearRect(0,0,canvas.width,canvas.height);
+	context.drawImage(image,dx, dy, imageWidth, imageHeith);
+	context.drawImage(watermarkCanvas, canvas.width - watermarkCanvas.width,canvas.height - watermarkCanvas.height);
+}
+</script>
+</body>
+</html>
